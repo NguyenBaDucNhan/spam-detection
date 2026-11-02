@@ -1,0 +1,8 @@
+# Direct dependencies used to verify this project on Python 3.12.
+# Optional: pip install -r requirements-lock.txt
+scikit-learn==1.8.0
+pandas==2.2.3
+joblib==1.5.3
+streamlit==1.66.1
+Pillow==12.3.0
+tzdata==2026.5

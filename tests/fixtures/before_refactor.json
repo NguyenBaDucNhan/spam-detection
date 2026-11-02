@@ -1,0 +1,224 @@
+{
+  "texts": [
+    "Mai mình gặp nhau lúc 8 giờ nhé.",
+    "CHUYỂN KHOẢN ngay lập tức để nhận thưởng!",
+    "Ma OTP cua ban la 123456. Khong chia se.",
+    "WINNER claim your prize now",
+    "  ĐẦU TƯ\n  tại nhà  ",
+    "Thông tin ở https://EXAMPLE.com/AbC?q=A#test",
+    "Xem (https://example.com/a(b)). www.example.org và a@example.edu",
+    ""
+  ],
+  "signatures": {
+    "preprocessing": {
+      "clean_text": "(text: str) -> str",
+      "validate_text": "(text: str) -> str"
+    },
+    "settings": {
+      "load_config": "()",
+      "project_path": "(value)"
+    },
+    "predictor": {
+      "main": "()",
+      "Prediction.to_dict": "(self)",
+      "SpamPredictor.__init__": "(self, model_path=None)",
+      "SpamPredictor.predict": "(self, text)"
+    },
+    "indicators": {
+      "fold": "(text)",
+      "analyze_indicators": "(text)"
+    },
+    "dataset": {
+      "read_source": "(source)",
+      "load_dataset": "(sources=None)",
+      "template_key": "(text)",
+      "split_dataset": "(df)"
+    },
+    "evaluate": {
+      "metrics": "(y_true, y_pred)",
+      "main": "()"
+    },
+    "train": {
+      "main": "()"
+    },
+    "feedback": {
+      "save_feedback": "(text, prediction, actual_label, *, save_text=False, db_path=None)"
+    },
+    "ocr": {
+      "find_tesseract": "()",
+      "prepare_image": "(data)",
+      "extract_text": "(data, language='vie+eng', *, timeout=30)"
+    },
+    "link_check": {
+      "extract_urls": "(text)",
+      "analyze_url": "(raw)",
+      "lookup_url": "(raw, api_key, *, timeout=10)"
+    },
+    "history": {
+      "database_path": "(db_path=None)",
+      "connect": "(db_path=None)",
+      "_save": "(kind, content, status, *, score=None, model_id=None, details=None, db_path=None)",
+      "save_message": "(text, prediction, *, db_path=None)",
+      "save_link": "(url, result, *, db_path=None)",
+      "_filters": "(kind=None, status=None, search='')",
+      "list_history": "(*, kind=None, status=None, search='', limit=20, offset=0, db_path=None)",
+      "delete_history": "(record_id=None, *, db_path=None)"
+    },
+    "history_ui": {
+      "render_history": "()"
+    }
+  },
+  "predictions": [
+    {
+      "label": "ham",
+      "score": -0.6598324434756948,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": []
+    },
+    {
+      "label": "spam",
+      "score": 0.4617502495392166,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": [
+        {
+          "code": "urgency",
+          "title": "Có ngôn ngữ thúc giục hoặc đe dọa",
+          "evidence": "ngay lap tuc",
+          "advice": "Dừng lại và kiểm tra yêu cầu qua kênh chính thức trước khi thao tác."
+        },
+        {
+          "code": "money",
+          "title": "Có nhắc đến chuyển tiền hoặc khoản phí",
+          "evidence": "chuyen khoan",
+          "advice": "Xác minh người nhận và mục đích thanh toán qua một kênh độc lập."
+        },
+        {
+          "code": "prize",
+          "title": "Có lời mời nhận thưởng hoặc quà",
+          "evidence": "nhan thuong",
+          "advice": "Kiểm tra nguồn chương trình; không chuyển phí chỉ để nhận quà."
+        }
+      ]
+    },
+    {
+      "label": "ham",
+      "score": -0.5853820313240826,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": [
+        {
+          "code": "otp",
+          "title": "Có nhắc đến OTP hoặc thông tin đăng nhập",
+          "evidence": "otp",
+          "advice": "Không cung cấp OTP hoặc mật khẩu cho người khác; tin thông báo OTP hợp lệ cũng có thể chứa các từ này."
+        }
+      ]
+    },
+    {
+      "label": "spam",
+      "score": 0.6548703866466193,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": [
+        {
+          "code": "prize",
+          "title": "Có lời mời nhận thưởng hoặc quà",
+          "evidence": "winner",
+          "advice": "Kiểm tra nguồn chương trình; không chuyển phí chỉ để nhận quà."
+        }
+      ]
+    },
+    {
+      "label": "spam",
+      "score": 0.06964383326084911,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": []
+    },
+    {
+      "label": "spam",
+      "score": 0.6078781614676768,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": [
+        {
+          "code": "url",
+          "title": "Tin nhắn có đường link",
+          "evidence": "https://EXAMPLE.com/AbC?q=A#test",
+          "advice": "Xem mục Kiểm tra đường link để phân tích cấu trúc hoặc chủ động tra cứu cảnh báo trực tuyến."
+        }
+      ]
+    },
+    {
+      "label": "spam",
+      "score": 0.583950984532429,
+      "model_id": "spam_multilingual.pkl:7426d053528d",
+      "indicators": [
+        {
+          "code": "url",
+          "title": "Tin nhắn có đường link",
+          "evidence": "https://example.com/a(b) | www.example.org",
+          "advice": "Xem mục Kiểm tra đường link để phân tích cấu trúc hoặc chủ động tra cứu cảnh báo trực tuyến."
+        }
+      ]
+    },
+    {
+      "exception": "ValueError",
+      "message": "Vui lòng nhập nội dung tin nhắn."
+    }
+  ],
+  "indicators": [
+    [],
+    [
+      {
+        "code": "urgency",
+        "title": "Có ngôn ngữ thúc giục hoặc đe dọa",
+        "evidence": "ngay lap tuc",
+        "advice": "Dừng lại và kiểm tra yêu cầu qua kênh chính thức trước khi thao tác."
+      },
+      {
+        "code": "money",
+        "title": "Có nhắc đến chuyển tiền hoặc khoản phí",
+        "evidence": "chuyen khoan",
+        "advice": "Xác minh người nhận và mục đích thanh toán qua một kênh độc lập."
+      },
+      {
+        "code": "prize",
+        "title": "Có lời mời nhận thưởng hoặc quà",
+        "evidence": "nhan thuong",
+        "advice": "Kiểm tra nguồn chương trình; không chuyển phí chỉ để nhận quà."
+      }
+    ],
+    [
+      {
+        "code": "otp",
+        "title": "Có nhắc đến OTP hoặc thông tin đăng nhập",
+        "evidence": "otp",
+        "advice": "Không cung cấp OTP hoặc mật khẩu cho người khác; tin thông báo OTP hợp lệ cũng có thể chứa các từ này."
+      }
+    ],
+    [
+      {
+        "code": "prize",
+        "title": "Có lời mời nhận thưởng hoặc quà",
+        "evidence": "winner",
+        "advice": "Kiểm tra nguồn chương trình; không chuyển phí chỉ để nhận quà."
+      }
+    ],
+    [],
+    [
+      {
+        "code": "url",
+        "title": "Tin nhắn có đường link",
+        "evidence": "https://EXAMPLE.com/AbC?q=A#test",
+        "advice": "Xem mục Kiểm tra đường link để phân tích cấu trúc hoặc chủ động tra cứu cảnh báo trực tuyến."
+      }
+    ],
+    [
+      {
+        "code": "url",
+        "title": "Tin nhắn có đường link",
+        "evidence": "https://example.com/a(b) | www.example.org",
+        "advice": "Xem mục Kiểm tra đường link để phân tích cấu trúc hoặc chủ động tra cứu cảnh báo trực tuyến."
+      }
+    ],
+    []
+  ],
+  "full_dataset_output_hash": "ce95db8853577381d7d8b4563e879cdd5aa80829eb591488362e721345830025"
+}

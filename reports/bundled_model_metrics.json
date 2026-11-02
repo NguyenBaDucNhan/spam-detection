@@ -1,0 +1,83 @@
+{
+  "dataset": "spam.csv + full_dataset.csv + email_spam_vietnamese.csv",
+  "note": "email_spam_vietnamese.csv is synthetic; its holdout metrics do not validate real Gmail performance.",
+  "train_samples": 8703,
+  "test_samples": 2178,
+  "sources_after_cleaning": {
+    "sms_en": 5157,
+    "email_vi_synthetic": 3127,
+    "sms_vi": 2597
+  },
+  "split": "20% stratified within source; random_state=30; exact duplicates removed before split",
+  "analyzer": "char",
+  "overall_test": {
+    "n": 2178,
+    "accuracy": 0.9913,
+    "spam_precision": 0.993,
+    "spam_recall": 0.9744,
+    "spam_f1": 0.9836,
+    "confusion_matrix_ham_spam": [
+      [
+        1589,
+        4
+      ],
+      [
+        15,
+        570
+      ]
+    ]
+  },
+  "by_source_test": {
+    "email_vi_synthetic": {
+      "n": 626,
+      "accuracy": 1.0,
+      "spam_precision": 1.0,
+      "spam_recall": 1.0,
+      "spam_f1": 1.0,
+      "confusion_matrix_ham_spam": [
+        [
+          311,
+          0
+        ],
+        [
+          0,
+          315
+        ]
+      ]
+    },
+    "sms_en": {
+      "n": 1032,
+      "accuracy": 0.9903,
+      "spam_precision": 0.9917,
+      "spam_recall": 0.9297,
+      "spam_f1": 0.9597,
+      "confusion_matrix_ham_spam": [
+        [
+          903,
+          1
+        ],
+        [
+          9,
+          119
+        ]
+      ]
+    },
+    "sms_vi": {
+      "n": 520,
+      "accuracy": 0.9827,
+      "spam_precision": 0.9784,
+      "spam_recall": 0.9577,
+      "spam_f1": 0.968,
+      "confusion_matrix_ham_spam": [
+        [
+          375,
+          3
+        ],
+        [
+          6,
+          136
+        ]
+      ]
+    }
+  }
+}

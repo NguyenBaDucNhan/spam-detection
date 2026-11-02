@@ -1,0 +1,10 @@
+{
+  "model_path": "models/spam_multilingual.pkl",
+  "feedback_path": "data/feedback.sqlite3",
+  "history_path": "data/history.sqlite3",
+  "default_sources": [
+    "sms_en",
+    "sms_vi",
+    "email_vi_synthetic"
+  ]
+}

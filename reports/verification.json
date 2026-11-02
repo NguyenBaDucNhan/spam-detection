@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "versions": {
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3",
+    "joblib": "1.5.3",
+    "streamlit": "1.66.1"
+  },
+  "python": "3.12.14",
+  "unit_and_app_tests": {
+    "passed": 39,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "checked": [
+    "Bundled model loads and predicts",
+    "Shared inference preprocessing",
+    "Whitespace / overlength validation",
+    "Vietnamese indicators",
+    "Feedback text omitted by default and saved only on opt-in",
+    "No exact or template-group train/test overlap",
+    "Confusion matrix orientation",
+    "Streamlit manual input, prediction, feedback and stale-input handling",
+    "Training SMS EN+VI completes",
+    "Independent-evaluation CLI smoke test on two toy rows (not a quality benchmark)",
+    "Real Tesseract English and Vietnamese OCR on synthetic images",
+    "OCR upload flow fills editable text; classification runs only on request",
+    "OCR failure preserves existing input",
+    "Invalid, oversized and high-pixel image rejection",
+    "Dark-background preprocessing",
+    "Missing engine guidance and OCR timeout/empty-result errors",
+    "URL extraction, normalization, structure warnings and invalid/private URL rejection",
+    "Safe Browsing fixed-endpoint request and match/no-match responses (mocked)",
+    "HTTP failures, quota, timeout and malformed responses never reported as safe",
+    "No network without API key or explicit lookup button; stale link results cleared on text changes",
+    "Persistent SQLite message and link history across sessions",
+    "No duplicate history on UI rerun; disabling storage prevents new records",
+    "Unicode case-insensitive search, parameterized filters, pagination and deletion",
+    "Explicit metadata allowlist omits API key/headers",
+    "Confirmed delete-all and graceful history-write failure in UI",
+    "Readability refactor: 19 behavioral snapshot sections match before/after",
+    "Regression fixture preserves original function signatures and results",
+    "Bundled model labels and scores match on all 10,881 messages",
+    "Predict/evaluate CLI stdout and char/word training outputs match with fixed timestamps",
+    "UI cleanup: removed sidebar and redundant explanatory copy; moved save-history control beneath input",
+    "Verified initial UI has no sidebar and history toggle remains available",
+    "Existing 39 tests pass after UI changes",
+    "Removed preset message buttons and embedded example URL from UI; flows tested using manual input"
+  ],
+  "training_smoke_test": {
+    "sources": [
+      "sms_en",
+      "sms_vi"
+    ],
+    "train_samples": 6203,
+    "test_samples": 1551,
+    "note": "Separate validation model, not the bundled model used by the app. Its metrics are not a new measurement of the bundled model."
+  },
+  "limits": [
+    "UI verified using Streamlit AppTest on Linux; Windows installer/launcher not executed on Windows",
+    "OCR checked on synthetic fixtures, not an accuracy benchmark",
+    "Safe Browsing tested with mocked HTTP responses; live Google lookup requires user-provided API key and is not yet verified",
+    "No independent real-world spam or malicious-URL benchmark added",
+    "History is a single local shared store; per-account authentication and authorization are not implemented"
+  ],
+  "ocr_engine": "tesseract 5.3.4"
+}
