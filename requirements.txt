@@ -1,7 +1,6 @@
-# Bundled sklearn pickle was created with scikit-learn 1.8.0.
+pandas
 scikit-learn==1.8.0
-pandas>=2.2,<3
-joblib>=1.3,<2
-streamlit>=1.50,<2
-Pillow>=10,<13
-tzdata>=2024.1
+matplotlib
+seaborn
+joblib
+streamlit

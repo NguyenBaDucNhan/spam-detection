@@ -1,8 +1,2 @@
-.venv/
 __pycache__/
-*.pyc
-data/*.sqlite3*
-reports/*/
-
-.env
-.streamlit/secrets.toml
+*.py[cod]
